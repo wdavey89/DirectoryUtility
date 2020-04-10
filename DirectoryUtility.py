@@ -4,7 +4,7 @@ def CheckValidDirectory(directory):
         os.chdir(directory)
         return directory
     except FileNotFoundError:
-        return ("Directory does not exist")
+        return ("Directory {} does not exist ".format(directory))
 
 def CountAmountOfFiles(directory):
     try:
@@ -13,7 +13,7 @@ def CountAmountOfFiles(directory):
         count = len(files)-1
         return count
     except FileNotFoundError:
-        return ("Directory does not exist")
+        return ("Directory {} does not exist ".format(directory))
 
 def CountAmountOfFilesWithSpecificExtension(directory, extension):
     try:
@@ -23,8 +23,6 @@ def CountAmountOfFilesWithSpecificExtension(directory, extension):
             if file.endswith(extension):
                 amountOfFiles.append(file)
         return amountOfFiles
-
-
     except FileNotFoundError:
-        return("Directory does not exist")
+        return("Directory {} does not exist ".format(directory))
 
